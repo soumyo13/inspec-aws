@@ -18,7 +18,6 @@ class AwsDbParameterGroup < AwsResourceBase
     @display_name = opts[:db_parameter_group_name]
 
     catch_aws_errors do
-      #require 'pry'; binding.pry
       resp = @aws.rds_client.describe_db_parameter_groups({ db_parameter_group_name: opts[:db_parameter_group_name] })
       if resp.db_parameter_groups.first.nil?
         empty_response_warn
