@@ -15,7 +15,7 @@ gem 'bundle'
 # Use Latest Inspec
 gem 'inspec-bin'
 
-gem 'rubocop', '~> 1.3'
+ gem 'rubocop'
 
 group :development do
   gem 'rake'

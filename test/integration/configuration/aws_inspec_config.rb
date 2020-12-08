@@ -190,8 +190,16 @@ module AWSInspecConfig
       aws_vpc_name: "inspec-aws-vpc-#{add_random_string}",
       aws_vpc_dhcp_options_name: 'inspec-aws-dopt',
       aws_vpc_endpoint_name: "aws-vpc-endpoint-#{add_random_string}",
+
+
+      aws_db_parameter_group_name: "aws-db-parameter-group2",
+      aws_db_parameter_group_family: "aurora-mysql5.7",
+      aws_db_parameter_group_parameter_name: "awsdbparametergroupname",
+      #aws_db_parameter_group_parameter_description: "aws_db_parameter_group_description_#{add_random_string}",
+
+
       # Simple flag to disable creation of resources (useful when prototyping new ones in isolation)
-      aws_enable_creation: 1,
+      aws_enable_creation: 0,
       # Flag to optionally disable creation/controls for configuration recorder (only 1 per AWS region allowed)
       aws_create_configuration_recorder: 0,
       # Some resources require elevated privileges to create and therefore test against.  The below flag is used to

@@ -1912,3 +1912,24 @@ resource "aws_guardduty_detector" "detector_1" {
   enable = true
   finding_publishing_frequency = "SIX_HOURS"
 }
+
+
+variable "aws_db_parameter_group_name" {}
+variable "aws_db_parameter_group_family" {}
+variable "aws_db_parameter_group_parameter_name" {}
+#variable "aws_db_parameter_group_parameter_description" {}
+
+resource "aws_db_parameter_group" "inspec_test_parameter_group" {
+  #count  = var.aws_enable_creation
+  count  = 1
+  name   = var.aws_db_parameter_group_name
+  #family = "mysql5.6"
+  family = var.aws_db_parameter_group_family
+
+  parameter {
+    name  = var.aws_db_parameter_group_parameter_name
+    #name = "awsdbparametergroupname1"
+    #description = var.aws_db_parameter_group_parameter_description
+    value = "utf8"
+  }
+}
